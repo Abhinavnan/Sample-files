@@ -8,7 +8,7 @@ const Kart = () => {
 
 export default Kart;
 
-String.replace(/\s+/g, ' ').trim() //remove all extra white spaces
+String.replaceAll(/\s+/g, ' ').trim() //remove all extra white spaces
 
 // Recognise mobile screen
 const theme = useTheme();
