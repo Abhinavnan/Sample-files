@@ -8,6 +8,8 @@ const Kart = () => {
 
 export default Kart;
 
+const emailRegex = /^[\w-+\.]+@\w+(\.\w+)+$/;
+
 String.replaceAll(/\s+/g, ' ').trim() //remove all extra white spaces
 
 // Recognise mobile screen
@@ -15,7 +17,7 @@ const theme = useTheme();
 const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
 //Recognise dark mode
-const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
 // Country list
 
