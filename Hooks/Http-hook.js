@@ -17,7 +17,11 @@ export const useHttp = () => {
         const signal = abortCtrl.signal;
         const headers = { 'Authorization': `Bearer ${token}` }
         try {
-            const response = await axios({url, method, data, headers, signal});
+            let response;
+            if(method === 'delete') 
+                response = await axios({url, method, headers, signal});
+            else
+                response = await axios({url, method, data, headers, signal});
             activeHttpRequests.current = activeHttpRequests.current.filter(reqCtrl => reqCtrl !== abortCtrl);
             return response.data;
         } catch (error) {
