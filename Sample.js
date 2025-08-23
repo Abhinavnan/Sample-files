@@ -20,9 +20,9 @@ const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
 //Get componet width > screen width
-import { useWindowSize } from 'react-use';
+import { useWindowSize, useWindowWidth, useWindowHeight} from '@react-hook/window-size'
 const ref = useRef();
-const widthOverFlow = useWindowSize().width < ref.current?.getBoundingClientRect().width ;
+const widthOverFlow = useWindowWidth() < ref.current?.getBoundingClientRect().width ;
 
 // Country list
 import countryList from 'react-select-country-list';
